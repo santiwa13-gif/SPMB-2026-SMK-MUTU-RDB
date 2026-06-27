@@ -1,0 +1,36 @@
+{
+  "entities": {
+    "Student": {
+      "title": "Student",
+      "description": "Student registration data",
+      "type": "object",
+      "properties": {
+        "noPendaftaran": {
+          "type": "string",
+          "description": "Unique registration number"
+        },
+        "nama": {
+          "type": "string"
+        },
+        "programKeahlian": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "required": ["noPendaftaran", "nama", "password", "status"]
+    }
+  },
+  "firestore": {
+    "students/{noPendaftaran}": {
+      "schema": {
+        "$ref": "Student"
+      },
+      "description": "Store all student data for SPMB"
+    }
+  }
+}
